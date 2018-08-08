@@ -4,12 +4,11 @@ key: cc9767f391d9266e7fb9b1e7fbe28dc0
 
 ---
 ## Data Frames / Tibbles
-  
+
 ```yaml
 type: "TitleSlide"
 key: "8d2840d66f"
 ```
-
 
 `@lower_third`
 
@@ -18,19 +17,16 @@ title: Director Finance Services RStudio
 
 
 `@script`
-Welcome to our chapter on data frames and tibbbles, which is another name for a data frame that you will hear in the R community. If data frames and tibbles are new to you, I recommend having a quick look at the "Data Frames" lesson from "Introduction to R".  They are  a very common data structure and are an important part of the tidyverse. Tibbles have a different structure than XTS objects such as the one we visualized in the last chapter and we will use a different highcharter code flow to chart them.  Before we do that, though, let's review the tibble that holds data for one  ETF, the price history of SPY..
+Welcome to our chapter on data frames and tibbbles, which is another name for a data frame that you will hear in the R community. If data frames and tibbles are new to you, I recommend having a quick look at the "Data Frames" lesson from "Introduction to R".  Tibbles have a different structure than XTS objects such as the one we visualized in the last chapter and we will use a different highcharter code flow to chart them.  Before we do that, though, let's review the tibble that holds data for one  ETF, the price history of SPY.
 
 
 ---
 ## Tibble of SPY Price History
 
-
-  
 ```yaml
 type: "FullImageSlide"
 key: "9004953abf"
 ```
-
 
 `@part1`
 ![etf_tibble](https://assets.datacamp.com/production/repositories/3344/datasets/c8c1bb21452433a983ceca40a296d8657fb09075/Screen Shot 2018-08-07 at 1.15.04 PM.png)
@@ -42,12 +38,11 @@ Have a look at the tibble and notice it has 3 columns: a column called date that
 
 ---
 ## Tibble v. XTS
-  
+
 ```yaml
 type: "TwoColumns"
 key: "ac8a678a7c"
 ```
-
 
 `@part1`
 ETF Tibble data
@@ -73,12 +68,11 @@ Here we are looking at the tibble of price data and the xts of price data. Recal
 
 ---
 ## hchart () and `hcaes()` steps
-  
+
 ```yaml
 type: "FullCodeSlide"
 key: "0d7cf18ad3"
 ```
-
 
 `@part1`
 1. `hchart()` starts the highcharter flow
@@ -96,12 +90,11 @@ The way to tell highcharter which column to use for the x-axis and y-axis is wit
 
 ---
 ## hchart() example
-  
+
 ```yaml
 type: "TwoColumns"
 key: "744163bf3d"
 ```
-
 
 `@part1`
 ```
@@ -121,46 +114,12 @@ Again, we start with hchart, pass in our tibble, type="line", and call hcaes(x=d
 
 
 ---
-## hchart when x-axis not specified
-  
-```yaml
-type: "TwoColumns"
-key: "70ca13310d"
-```
-
-
-`@part1`
-```
-hchart(spy_tibble, 
-       type = "line",
-       hcaes(y = price)) 
-```
-we forgot to specify the x axis with
- ```
-x = date
-```
-
--  look at the x-axis - it's not a date!
-
-- x-axis is numbered 1- 1408
-
-
-`@part2`
-![](https://assets.datacamp.com/production/repositories/3344/datasets/310528affe394e37da4d0ae9f47ab1b5a876055b/Screen Shot 2018-08-07 at 2.21.02 PM.png)
-
-
-`@script`
-what if we forget to specify the x axis? Highcharter won't throw an error and we still get a good looking chart. highcharter looks at the row numbers, or index positions, and puts them on the x-axis. Have a look at this chart. It works, but there's no date! It's numbered 1- 1408 because our tibble has 1408 rows.
-
-
----
 ## Title, subtitle, axis labels: same as xts
-  
+
 ```yaml
 type: "TwoColumns"
 key: "678d3df8db"
 ```
-
 
 `@part1`
 ```
@@ -186,13 +145,12 @@ We can change the color with color = "green", and add a title, subtitle, and dol
 
 
 ---
-## Let's visualize a tibble! 
-  
+## Let's visualize a tibble!
+
 ```yaml
 type: "FinalSlide"
 key: "b8219c4582"
 ```
-
 
 `@script`
 Alright, let's put this into practice and visualize a tibble.
