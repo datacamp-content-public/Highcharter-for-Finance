@@ -83,37 +83,3 @@ key: 877cc5966f
 
 
 
-
-`@instructions`
-
-
-`@hint`
-
-
-`@pre_exercise_code`
-
-```{r}
-
-```
-
-
-`@sample_code`
-
-```{r}
-
-```
-
-
-`@solution`
-
-```{r}
-
-```
-
-
-`@sct`
-
-```{r}
-
-```
-
