@@ -70,3 +70,50 @@ key: 5d08ef4bce
 
 `@projector_key`
 cc9767f391d9266e7fb9b1e7fbe28dc0
+---
+
+## Insert exercise title here
+
+```yaml
+type: NormalExercise 
+xp: 100 
+key: 877cc5966f   
+```
+
+
+
+
+
+`@instructions`
+
+
+`@hint`
+
+
+`@pre_exercise_code`
+
+```{r}
+
+```
+
+
+`@sample_code`
+
+```{r}
+
+```
+
+
+`@solution`
+
+```{r}
+
+```
+
+
+`@sct`
+
+```{r}
+
+```
+
