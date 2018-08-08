@@ -17,7 +17,7 @@ title: Director Finance Services RStudio
 
 
 `@script`
-Welcome to our chapter on data frames and tibbbles, which is another name for a data frame that you will hear in the R community. If data frames and tibbles are new to you, I recommend having a quick look at the "Data Frames" lesson from "Introduction to R".  Tibbles have a different structure than XTS objects such as the one we visualized in the last chapter and we will use a different highcharter code flow to chart them.  Before we do that, though, let's review the tibble that holds data for one  ETF, the price history of SPY.
+Welcome to our chapter on data frames and tibbbles, which is another name for a data frame that you will hear in the R world. If data frames and tibbles are new to you, I recommend having a quick look at the "Data Frames" lesson from "Introduction to R".  Tibbles have a different structure than XTS objects such as the one we visualized in the last chapter. That means we will use a different highcharter code flow to chart them.  Let's first look at the tibble that holds data for one  the SPY ETF.
 
 
 ---
@@ -33,7 +33,7 @@ key: "9004953abf"
 
 
 `@script`
-Have a look at the tibble and notice it has 3 columns: a column called date that holds the date of each observation, a column called 'ETF' that holds the name of the ETF, a column called price that holds the price.  When we visualize this tibble with highcharter (or indeed any data vis library), we need to explicitly tell highcharter which column to use for our x axis data and which for our y axis data. It won't 'just know' that date goes on the x-axis because sometimes it won't.  If, for example, this weren't a time series, there might not be a column called date.
+Notice it has 3 columns: a column called date that holds the date of each observation, a column called 'ETF' that holds the name of the ETF, a column called price that holds the price.  When we visualize this tibble with highcharter we need to explicitly tell highcharter which column to use for our x axis data and which for our y axis data. It won't 'just know' that date goes on the x-axis because sometimes it won't.  If, for example, this weren't a time series, there might not be a column called date.
 
 
 ---
@@ -63,7 +63,7 @@ ETF XTS data
 
 
 `@script`
-Here we are looking at the tibble of price data and the xts of price data. Recall the previous chapter when we passed the xts object to highcharter. It has no date column - the dates are held in the index and we did NOT tell highcharter that the index went on the x-axis. Highcharter just knew to use the index. This is a huge difference between xts financial time series and tibble financial time series. With xts, we pass in the object and highcharter knows to put the index on the x-axis. With tibbles we have to tell highcharter to put the 'date' column on the x-axis.  So, how do we tell highcharter this information about the x and y axis?
+Recall the previous chapter when we passed the xts object to highcharter, we did not specify a column for the x axis. It has no date column - the dates are held in the index and we did NOT tell highcharter that the index went on the x-axis. Highcharter just knew to use the index. This is a huge difference between xts and tibble . With tibbles we have to tell highcharter to put the 'date' column on the x-axis.  So, how do we tell highcharter this information about the x and y axis?
 
 
 ---
@@ -77,7 +77,7 @@ key: "0d7cf18ad3"
 `@part1`
 1. `hchart()` starts the highcharter flow
 2. pass it our tibble: `hchart(spy_tibble...)`
-3. use `hcaes` to set x and y axis data
+3. use `hcaes` to set x and y axis data (similar to `aes` from `ggplot`)
 4. hcaes = highcharter + aesthetic
 5. 
 `hchart(etf_tibble, hcaes(x = date, y = price))`
@@ -85,7 +85,7 @@ key: "0d7cf18ad3"
 
 
 `@script`
-The way to tell highcharter which column to use for the x-axis and y-axis is with the `hcaes()` function, which is similar to the `aes` function from `ggplot`.  Let's look at the code flow. We first call the `hchart()` function to start the highcharter code flow. Then we pass it `spy_tibble`. Now highcharter  knows what data object to work with, but it doesn't know which column to use for the x-axis data and which for the y-axis data. We communicate that with hcaes(x = date, y = price).  Now highcharter is aware that date goes on the x-axis and price goes on the y-axis. How does it know we want a line chart? We use type = "line", and we will see later how that let's us construct different types of charts. Note that this hchart-hcaes code flow requires us to be more explicit than we were with the xts object, but we will see how it can be more flexible and efficient for charting tidy tibbles that has for example all 3 ETFs price data. First though, let's look at the tibble to hchart to hcaes code flow and results.
+We use the `hchart` function with `hcaes()`, which is similar to `aes` from `ggplot`.  Let's look at the code flow. We first call the `hchart()` function to start the highcharter code flow. Then we pass it `spy_tibble`. Now highcharter  knows what data object to work with, but it doesn't know which column to use for the x-axis data and which for the y-axis data. We communicate that with hcaes(x = date, y = price).  Now highcharter is aware that date goes on the x-axis and price goes on the y-axis. How does it know we want a line chart? We use type = "line", and we will see later how that let's us construct different types of charts. Note that this hchart-hcaes code flow requires us to be more explicit than we were with the xts object, but we will see how it can be more flexible and efficient for charting tidy tibbles that has for example all 3 ETFs price data. First though, let's look at the tibble to hchart to hcaes code flow and results.
 
 
 ---
