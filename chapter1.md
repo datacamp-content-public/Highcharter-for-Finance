@@ -6,9 +6,9 @@ description: 'This is a template chapter.'
 ## Insert exercise title here
 
 ```yaml
-type: VideoExercise 
-xp: 50 
-key: 5d08ef4bce   
+type: VideoExercise
+key: 5d08ef4bce
+xp: 50
 ```
 
 `@projector_key`
